@@ -1,0 +1,46 @@
+{
+  "name": "ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-select": "^2.2.6",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.89.0",
+    "@tanstack/react-form": "^1.27.7",
+    "@tanstack/zod-form-adapter": "^0.42.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "recharts": "^3.6.0",
+    "tailwind-merge": "^3.4.0",
+    "use-debounce": "^10.0.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/react": "^16.3.1",
+    "@types/node": "^20.19.27",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "jsdom": "^27.4.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.0.16"
+  },
+  "packageManager": "pnpm@9.1.1+sha1.09ada6cd05003e0ced25fb716f9fda4063ec2e3b"
+}

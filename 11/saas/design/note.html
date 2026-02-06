@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote - 노트 관리</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563eb",
+                        "primary-dark": "#1d4ed8",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#f3f4f6] text-slate-900 font-display antialiased overflow-hidden h-screen flex flex-col">
+<header class="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-6 shrink-0 z-20 relative">
+<div class="flex items-center gap-2">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px] leading-none" style="font-variation-settings: 'FILL' 1;">
+                    cloud
+                </span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-slate-900">CloudNote</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+<span>user@cloudnote.com</span>
+</div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<aside class="w-[30%] min-w-[300px] max-w-[400px] bg-white border-r border-gray-200 flex flex-col h-full z-10">
+<div class="p-4 border-b border-gray-100 flex items-center justify-between shrink-0">
+<h2 class="text-lg font-bold text-slate-800">내 노트</h2>
+<button class="bg-primary hover:bg-primary-dark text-white px-3 py-1.5 rounded-md text-sm font-medium flex items-center gap-1 transition-colors" onclick="document.getElementById('new-note-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    새 노트
+                </button>
+</div>
+<div class="flex-1 overflow-y-auto p-2 space-y-1">
+<div class="group cursor-pointer p-3 rounded-lg border border-primary/30 bg-blue-50 hover:bg-blue-50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-900 truncate pr-2">2024년 4분기 마케팅 전략 기획안</h3>
+<span class="text-xs text-slate-500 shrink-0">방금 전</span>
+</div>
+<p class="text-sm text-slate-600 truncate">소셜 미디어 캠페인 예산 증액 및 인플루언서 협업 구체화 방안 정리 필요.</p>
+</div>
+<div class="group cursor-pointer p-3 rounded-lg border border-transparent hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-800 truncate pr-2">주간 회의록 (11/15)</h3>
+<span class="text-xs text-slate-400 shrink-0">어제</span>
+</div>
+<p class="text-sm text-slate-500 truncate">개발팀 스프린트 리뷰 및 디자인 시스템 업데이트 일정 공유.</p>
+</div>
+<div class="group cursor-pointer p-3 rounded-lg border border-transparent hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-800 truncate pr-2">프로젝트 아이디어: AI 챗봇</h3>
+<span class="text-xs text-slate-400 shrink-0">3일 전</span>
+</div>
+<p class="text-sm text-slate-500 truncate">자연어 처리를 활용한 고객 응대 자동화 시스템 초기 구상 스케치.</p>
+</div>
+<div class="group cursor-pointer p-3 rounded-lg border border-transparent hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-800 truncate pr-2">11월 도서 구매 목록</h3>
+<span class="text-xs text-slate-400 shrink-0">1주 전</span>
+</div>
+<p class="text-sm text-slate-500 truncate">클린 코드, 리팩토링 2판, 디자인의 정석 등 구매 예정 도서 리스트업.</p>
+</div>
+<div class="group cursor-pointer p-3 rounded-lg border border-transparent hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-slate-800 truncate pr-2">개인정보처리방침 초안</h3>
+<span class="text-xs text-slate-400 shrink-0">2주 전</span>
+</div>
+<p class="text-sm text-slate-500 truncate">법률 자문 검토 전 내부 확인용 초안 작성 완료. 수정 사항 체크 필요.</p>
+</div>
+</div>
+</aside>
+<section class="flex-1 bg-[#f3f4f6] overflow-y-auto h-full p-4 md:p-8">
+<div class="hidden h-full flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[64px] mb-4 text-slate-300">description</span>
+<p class="text-lg">노트를 선택해주세요</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 min-h-full p-8 relative max-w-4xl mx-auto">
+<div class="border-b border-gray-100 pb-6 mb-8">
+<div class="flex flex-wrap items-center gap-3 mb-4">
+<span class="bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide">업무</span>
+<span class="text-sm text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                            2023년 11월 20일 오전 10:30
+                        </span>
+<div class="ml-auto">
+<button class="text-slate-400 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-red-50" title="삭제">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h1 class="text-3xl font-bold text-slate-900 leading-tight">2024년 4분기 마케팅 전략 기획안</h1>
+</div>
+<div class="prose max-w-none text-slate-700 space-y-6 leading-relaxed">
+<p>
+                        이번 분기 마케팅의 핵심 목표는 브랜드 인지도 확산과 신규 유저 유입입니다. 지난 분기 데이터 분석 결과, 소셜 미디어 채널에서의 전환율이 가장 높았으므로 이에 대한 투자를 확대할 계획입니다.
+                    </p>
+<div>
+<h3 class="text-xl font-bold text-slate-800 mb-3">1. 주요 전략</h3>
+<ul class="list-disc pl-5 space-y-2 marker:text-primary">
+<li><strong>인스타그램 릴스/틱톡 숏폼 콘텐츠 강화:</strong> 제품 사용법을 쉽고 재미있게 보여주는 15초 내외 영상 제작 (주 3회 업로드)</li>
+<li><strong>인플루언서 파트너십:</strong> 테크/라이프스타일 카테고리 마이크로 인플루언서 10인 섭외하여 리뷰 콘텐츠 발행</li>
+<li><strong>뉴스레터 개편:</strong> 기존 텍스트 위주에서 이미지 중심의 큐레이션 레터로 변경, 클릭률 5% 달성 목표</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-800 mb-3">2. 예산안 (초안)</h3>
+<div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+<table class="w-full text-sm text-left">
+<thead class="border-b border-gray-200 text-slate-500">
+<tr>
+<th class="py-2">항목</th>
+<th class="py-2">예산</th>
+<th class="py-2">비고</th>
+</tr>
+</thead>
+<tbody class="text-slate-700">
+<tr class="border-b border-gray-100">
+<td class="py-2">SNS 광고 집행</td>
+<td class="py-2">₩5,000,000</td>
+<td class="py-2">메타, 틱톡 ADS</td>
+</tr>
+<tr class="border-b border-gray-100">
+<td class="py-2">인플루언서 비용</td>
+<td class="py-2">₩3,000,000</td>
+<td class="py-2">제품 협찬 포함</td>
+</tr>
+<tr>
+<td class="py-2">콘텐츠 제작비</td>
+<td class="py-2">₩2,000,000</td>
+<td class="py-2">영상 편집 외주</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>
+                        추가적으로 12월 크리스마스 시즌을 대비한 홀리데이 패키지 프로모션도 기획 단계에 있습니다. 디자인 팀과 협의하여 다음 주까지 시안을 완성할 예정입니다.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<div aria-labelledby="modal-title" aria-modal="true" class="hidden fixed inset-0 z-50 overflow-y-auto" id="new-note-modal" role="dialog">
+<div class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity" onclick="document.getElementById('new-note-modal').classList.add('hidden')"></div>
+<div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+<div class="relative transform overflow-hidden rounded-xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+<div class="bg-white px-4 py-5 sm:p-6 pb-0">
+<h3 class="text-lg font-bold leading-6 text-gray-900" id="modal-title">새로운 기록 남기기</h3>
+<div class="mt-2">
+<p class="text-sm text-gray-500">아이디어를 기록하고 분류하여 관리하세요.</p>
+</div>
+</div>
+<div class="px-4 py-4 sm:p-6 space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="title">제목</label>
+<input class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2.5 border placeholder-gray-400" id="title" name="title" placeholder="노트 제목을 입력하세요" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="category">카테고리</label>
+<select class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2.5 border bg-white" id="category" name="category">
+<option>선택 안함</option>
+<option>업무</option>
+<option>개인</option>
+<option>아이디어</option>
+<option>공부</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="content">내용</label>
+<textarea class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-2.5 border placeholder-gray-400 resize-none" id="content" name="content" placeholder="내용을 자유롭게 작성하세요..." rows="6"></textarea>
+</div>
+</div>
+<div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+<button class="inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-dark sm:ml-3 sm:w-auto transition-colors" onclick="document.getElementById('new-note-modal').classList.add('hidden')" type="button">
+                        저장하기
+                    </button>
+<button class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition-colors" onclick="document.getElementById('new-note-modal').classList.add('hidden')" type="button">
+                        취소
+                    </button>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote 사용자 대시보드</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2632",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-gray-100">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden md:flex w-64 flex-col bg-surface-light dark:bg-surface-dark border-r border-[#f0f2f4] dark:border-gray-800">
+<div class="flex items-center gap-3 px-6 h-16 border-b border-[#f0f2f4] dark:border-gray-800">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-[24px]">cloud</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-[#111418] dark:text-white">CloudNote</h1>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#111418] dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-sm font-medium">홈</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#111418] dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<span class="text-sm font-medium">내 메모</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#111418] dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+<span class="text-sm font-medium">설정</span>
+</a>
+<div class="my-2 border-t border-[#f0f2f4] dark:border-gray-800 mx-3"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined text-[22px] fill-1">credit_card</span>
+<span class="text-sm">구독 관리</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#f0f2f4] dark:border-gray-800">
+<a class="flex items-center gap-2 text-sm text-[#617589] dark:text-gray-400 hover:text-primary transition-colors justify-center" href="#">
+<span class="material-symbols-outlined text-[18px]">headset_mic</span>
+<span>고객센터 문의</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-full min-w-0 bg-background-light dark:bg-background-dark">
+<!-- Top Header (Mobile/Tablet friendly but mostly for Desktop layout as requested) -->
+<header class="flex items-center justify-between h-16 px-6 bg-surface-light dark:bg-surface-dark border-b border-[#f0f2f4] dark:border-gray-800 sticky top-0 z-10">
+<!-- Mobile Menu Button (Hidden on desktop) -->
+<button class="md:hidden p-2 -ml-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Spacer for desktop layout balance -->
+<div class="hidden md:block"></div>
+<!-- User Profile -->
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-medium text-[#111418] dark:text-white">홍길동</p>
+<p class="text-xs text-[#617589] dark:text-gray-400">Pro 회원</p>
+</div>
+<button class="flex items-center gap-2 rounded-full pl-1 pr-2 py-1 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<div class="size-8 rounded-full bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="사용자 프로필 이미지" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8ThB0vUBPgolxl3YfVUZJF0q1lxDOSHown29WXzsYKlpj7b9k0e1ahAiGq9MGcMW4_c6YEEW2TxGjbMUX_zj014bfRHjADmFNmrtl-Gcm0an77UH9efVCNdzgz-UfByx2L8QNNYk0TF8BEiC9qKbSJlG1240wp6jIMUDuyIQbyLgICqI1lbDkbcweN5_MswkCTUOa15GCx0qbFzNTu6mzUjBxy6JyrO4f5JV_yg2QumLNK1f_88NXzIF5krk4vxvx-GHAt12E");'></div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-[20px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto p-4 md:p-8">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Welcome Heading -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-[#111418] dark:text-white mb-2">안녕하세요, 홍길동님!</h2>
+<p class="text-[#617589] dark:text-gray-400">현재 <span class="font-semibold text-primary">Pro 플랜</span>을 이용 중입니다</p>
+</div>
+</div>
+<!-- Grid Layout for Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Subscription Status Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#f0f2f4] dark:border-gray-800 shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center">
+<h3 class="font-bold text-lg">구독 현황</h3>
+<div class="flex gap-2">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 text-xs font-semibold text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">Pro</span>
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/30 px-2.5 py-1 text-xs font-semibold text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">활성</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between gap-6">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-[#617589] dark:text-gray-400">다음 결제일</span>
+<span class="text-sm font-medium">2025년 2월 15일</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-[#617589] dark:text-gray-400">월 결제 금액</span>
+<span class="text-lg font-bold">₩9,900</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-[#617589] dark:text-gray-400">결제 수단</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gray-400">credit_card</span>
+<span class="text-sm font-medium">Visa •••• 4242</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 mt-4 pt-4 border-t border-[#f0f2f4] dark:border-gray-800">
+<button class="flex-1 bg-primary hover:bg-blue-600 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+                                        플랜 변경
+                                    </button>
+<button class="flex-1 bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium py-2.5 px-4 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                                        구독 취소
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Usage Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#f0f2f4] dark:border-gray-800 shadow-sm flex flex-col h-full">
+<div class="p-6 border-b border-[#f0f2f4] dark:border-gray-800">
+<h3 class="font-bold text-lg">이번 달 사용량</h3>
+</div>
+<div class="p-6 flex flex-col justify-center flex-1 gap-8">
+<!-- Usage Item 1 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">description</span>
+<span class="font-medium text-[#111418] dark:text-gray-200">메모 개수</span>
+</div>
+<span class="text-[#617589] dark:text-gray-400">234 / 무제한</span>
+</div>
+<div class="h-2.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Usage Item 2 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">cloud_queue</span>
+<span class="font-medium text-[#111418] dark:text-gray-200">저장공간</span>
+</div>
+<span class="text-[#617589] dark:text-gray-400">3.2GB / 10GB (32%)</span>
+</div>
+<div class="h-2.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<!-- Usage Item 3 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">auto_awesome</span>
+<span class="font-medium text-[#111418] dark:text-gray-200">AI 요약</span>
+</div>
+<span class="text-[#617589] dark:text-gray-400">45회 / 100회 (45%)</span>
+</div>
+<div class="h-2.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Card (Full Width on Large) -->
+<div class="lg:col-span-2 bg-surface-light dark:bg-surface-dark rounded-xl border border-[#f0f2f4] dark:border-gray-800 shadow-sm">
+<div class="p-6 border-b border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center">
+<h3 class="font-bold text-lg">최근 활동</h3>
+<button class="text-primary text-sm font-medium hover:underline">전체 보기</button>
+</div>
+<div class="divide-y divide-[#f0f2f4] dark:divide-gray-800">
+<div class="p-4 flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-[#111418] dark:text-white">새 메모 작성: 회의록</p>
+<p class="text-xs text-[#617589] dark:text-gray-500 mt-0.5">1시간 전 • 웹에서 작성</p>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-[#111418] dark:text-white">AI 요약 생성</p>
+<p class="text-xs text-[#617589] dark:text-gray-500 mt-0.5">3시간 전 • '마케팅 기획안' 문서</p>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-[#111418] dark:text-white">폴더 생성: 프로젝트</p>
+<p class="text-xs text-[#617589] dark:text-gray-500 mt-0.5">어제 • 홍길동</p>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="bg-gray-50 dark:bg-gray-700/30 text-gray-600 dark:text-gray-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-[#111418] dark:text-white">메모 공유: 디자인 시안</p>
+<p class="text-xs text-[#617589] dark:text-gray-500 mt-0.5">2일 전 • 김철수님에게 공유됨</p>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">login</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-[#111418] dark:text-white">로그인</p>
+<p class="text-xs text-[#617589] dark:text-gray-500 mt-0.5">3일 전 • 서울, 대한민국 (Chrome)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-8"></div> <!-- Bottom Spacer -->
+</div>
+</main>
+</div>
+</div>
+</body></html>

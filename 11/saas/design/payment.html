@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote 구독 결제 페이지</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e62b8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans KR", "sans-serif"],
+                        "body": ["Inter", "Noto Sans KR", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#e5e7eb] bg-white/80 dark:bg-background-dark/80 px-4 py-3 backdrop-blur-md lg:px-10">
+<div class="flex items-center gap-4">
+<div class="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">cloud_circle</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-[#111418] dark:text-white">CloudNote</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden text-sm font-medium text-[#637588] hover:text-[#111418] dark:text-gray-400 dark:hover:text-white sm:block">지원센터</button>
+<button class="flex h-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#111418] px-4 text-sm font-bold text-white transition-colors hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+<span class="truncate">로그인</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center py-10">
+<div class="flex w-full max-w-[1200px] flex-col gap-10 px-4 lg:px-8">
+<!-- Page Heading -->
+<div class="flex flex-col items-center gap-3 text-center">
+<h1 class="text-3xl font-black leading-tight tracking-tight text-[#111418] dark:text-white md:text-4xl">구독 플랜 선택</h1>
+<p class="text-base font-normal text-[#637588] dark:text-gray-400">원하는 플랜을 선택하고 결제를 진행하세요</p>
+</div>
+<!-- Pricing Cards -->
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+<!-- Free Card -->
+<div class="relative flex flex-col gap-6 rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-[#1a2632] lg:p-8">
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Free</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight text-[#111418] dark:text-white">₩0</span>
+<span class="text-sm font-medium text-[#637588] dark:text-gray-400">/월</span>
+</div>
+<p class="text-sm text-[#637588] dark:text-gray-400">개인 사용자를 위한 기본 기능</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                기본 노트 작성 (무제한)
+                            </div>
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                월 100MB 파일 업로드
+                            </div>
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                기기 1대 동기화
+                            </div>
+</div>
+<div class="mt-auto pt-4">
+<button class="flex h-12 w-full cursor-not-allowed items-center justify-center rounded-xl bg-[#f3f4f6] text-sm font-bold text-[#9ca3af] dark:bg-gray-800 dark:text-gray-600" disabled="">
+                                현재 플랜
+                            </button>
+</div>
+</div>
+<!-- Pro Card (Highlighted) -->
+<div class="relative flex scale-100 flex-col gap-6 rounded-2xl border-2 border-primary bg-white p-6 shadow-lg ring-4 ring-primary/5 dark:bg-[#1a2632] lg:scale-105 lg:p-8">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-bold text-white shadow-sm">
+                            추천
+                        </div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-primary">Pro</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight text-[#111418] dark:text-white">₩9,900</span>
+<span class="text-sm font-medium text-[#637588] dark:text-gray-400">/월</span>
+</div>
+<p class="text-sm text-[#637588] dark:text-gray-400">전문적인 작업을 위한 모든 기능</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-sm font-medium text-[#111418] dark:text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+                                무제한 노트 및 폴더
+                            </div>
+<div class="flex items-center gap-3 text-sm font-medium text-[#111418] dark:text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+                                월 10GB 대용량 업로드
+                            </div>
+<div class="flex items-center gap-3 text-sm font-medium text-[#111418] dark:text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+                                모든 기기 실시간 동기화
+                            </div>
+<div class="flex items-center gap-3 text-sm font-medium text-[#111418] dark:text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+                                오프라인 액세스 지원
+                            </div>
+</div>
+<div class="mt-auto pt-4">
+<button class="flex h-12 w-full items-center justify-center rounded-xl bg-primary text-sm font-bold text-white shadow-md transition-all hover:bg-primary-dark hover:shadow-lg">
+                                이 플랜 선택
+                            </button>
+</div>
+</div>
+<!-- Enterprise Card -->
+<div class="relative flex flex-col gap-6 rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-[#1a2632] lg:p-8">
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#111418] dark:text-white">Enterprise</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black tracking-tight text-[#111418] dark:text-white">₩29,900</span>
+<span class="text-sm font-medium text-[#637588] dark:text-gray-400">/월</span>
+</div>
+<p class="text-sm text-[#637588] dark:text-gray-400">팀 협업과 보안을 위한 솔루션</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                고급 팀 협업 기능
+                            </div>
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                무제한 업로드 용량
+                            </div>
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                관리자 대시보드
+                            </div>
+<div class="flex items-center gap-3 text-sm text-[#111418] dark:text-gray-200">
+<span class="material-symbols-outlined text-[20px] text-[#637588] dark:text-gray-500">check_circle</span>
+                                SSO 통합 로그인
+                            </div>
+</div>
+<div class="mt-auto pt-4">
+<button class="flex h-12 w-full items-center justify-center rounded-xl border border-[#e5e7eb] bg-white text-sm font-bold text-[#111418] transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-transparent dark:text-white dark:hover:bg-gray-800">
+                                이 플랜 선택
+                            </button>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="my-6 h-px w-full bg-[#e5e7eb] dark:bg-gray-700"></div>
+<!-- Payment Section Container (Simulated as selected) -->
+<div class="flex flex-col gap-8 lg:flex-row lg:gap-12">
+<!-- Order Summary -->
+<div class="flex flex-1 flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h2 class="text-2xl font-bold tracking-tight text-[#111418] dark:text-white">결제 정보</h2>
+<p class="text-sm text-[#637588] dark:text-gray-400">선택하신 플랜의 정보를 확인해주세요.</p>
+</div>
+<div class="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm dark:border-gray-700 dark:bg-[#1a2632]">
+<div class="border-b border-[#f3f4f6] bg-[#f9fafb] px-6 py-4 dark:border-gray-700 dark:bg-gray-800/50">
+<h3 class="text-base font-bold text-[#111418] dark:text-white">주문 요약</h3>
+</div>
+<div class="p-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-[#637588] dark:text-gray-400">선택한 플랜</span>
+<span class="text-sm font-bold text-[#111418] dark:text-white">Pro 플랜</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-[#637588] dark:text-gray-400">결제 주기</span>
+<span class="text-sm font-medium text-[#111418] dark:text-white">월간 구독</span>
+</div>
+<div class="my-2 h-px w-full border-t border-dashed border-[#e5e7eb] dark:border-gray-600"></div>
+<div class="flex items-end justify-between">
+<span class="text-sm font-bold text-[#111418] dark:text-white">총 결제 금액</span>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black text-primary">₩9,900</span>
+<span class="text-xs text-[#637588] dark:text-gray-500">부가세 포함</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Refund Policy Note (Desktop left column) -->
+<div class="hidden flex-col gap-2 rounded-xl bg-blue-50 p-4 text-xs text-[#1e40af] dark:bg-blue-900/20 dark:text-blue-200 lg:flex">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+<p class="leading-relaxed">구독 시작 후 7일 이내에 서비스를 사용하지 않은 경우 전액 환불이 가능합니다. 언제든 계정 설정에서 구독을 취소할 수 있으며, 취소 시 다음 결제일 전까지 서비스를 계속 이용하실 수 있습니다.</p>
+</div>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="flex flex-1 flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h2 class="text-2xl font-bold tracking-tight text-[#111418] dark:text-white">결제 수단 선택</h2>
+<p class="text-sm text-[#637588] dark:text-gray-400">안전한 결제를 위해 토스페이먼츠 보안 창이 열립니다.</p>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Payment Methods Grid -->
+<div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="payment" type="radio"/>
+<div class="flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#e5e7eb] bg-white p-3 transition-all peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 peer-hover:border-primary/50 dark:border-gray-700 dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-3xl text-[#111418] dark:text-white">credit_card</span>
+<span class="text-xs font-medium text-[#111418] dark:text-white">신용카드</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="payment" type="radio"/>
+<div class="flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#e5e7eb] bg-white p-3 transition-all peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 peer-hover:border-primary/50 dark:border-gray-700 dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-3xl text-[#fbbf24]">savings</span> <!-- Placeholder for KakaoPay visual -->
+<span class="text-xs font-medium text-[#111418] dark:text-white">카카오페이</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="payment" type="radio"/>
+<div class="flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#e5e7eb] bg-white p-3 transition-all peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 peer-hover:border-primary/50 dark:border-gray-700 dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-3xl text-[#22c55e]">account_balance_wallet</span> <!-- Placeholder for NaverPay visual -->
+<span class="text-xs font-medium text-[#111418] dark:text-white">네이버페이</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="payment" type="radio"/>
+<div class="flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-[#e5e7eb] bg-white p-3 transition-all peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 peer-hover:border-primary/50 dark:border-gray-700 dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-3xl text-[#3b82f6]">payments</span> <!-- Placeholder for Toss visual -->
+<span class="text-xs font-medium text-[#111418] dark:text-white">토스페이</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Agreement Checkbox -->
+<div class="flex items-center gap-3 py-2">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-700" id="terms" type="checkbox"/>
+<label class="cursor-pointer select-none text-sm text-[#111418] dark:text-gray-300" for="terms">
+<span class="font-bold underline">구매 조건</span> 및 <span class="font-bold underline">개인정보 처리방침</span>에 동의합니다.
+                             </label>
+</div>
+<button class="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-primary text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/40 active:scale-[0.98]">
+<span class="material-symbols-outlined">lock</span>
+                            ₩9,900 결제하기
+                        </button>
+<!-- Refund Policy Note (Mobile only) -->
+<div class="flex flex-col gap-2 rounded-xl bg-blue-50 p-4 text-xs text-[#1e40af] dark:bg-blue-900/20 dark:text-blue-200 lg:hidden">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+<p class="leading-relaxed">구독 시작 후 7일 이내에 서비스를 사용하지 않은 경우 전액 환불이 가능합니다. 언제든 계정 설정에서 구독을 취소할 수 있으며, 취소 시 다음 결제일 전까지 서비스를 계속 이용하실 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-10 border-t border-[#e5e7eb] bg-white py-10 dark:border-gray-800 dark:bg-background-dark">
+<div class="mx-auto max-w-[1200px] px-4 text-center text-sm text-[#9ca3af] dark:text-gray-500">
+<p class="mb-2">© 2024 CloudNote Inc. All rights reserved.</p>
+<div class="flex justify-center gap-4">
+<a class="hover:text-[#637588] hover:underline" href="#">이용약관</a>
+<a class="hover:text-[#637588] hover:underline" href="#">개인정보처리방침</a>
+<a class="hover:text-[#637588] hover:underline" href="#">문의하기</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

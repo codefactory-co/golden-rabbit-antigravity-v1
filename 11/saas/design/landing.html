@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote - 당신의 아이디어를 클라우드에</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b5eb5",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-white text-slate-900 font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] leading-none" style="font-variation-settings: 'FILL' 1;">
+                            cloud
+                        </span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900">CloudNote</h2>
+</div>
+<button class="rounded-lg bg-slate-100 px-5 py-2 text-sm font-bold text-slate-900 hover:bg-slate-200 transition-colors">
+                    로그인
+                </button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative flex flex-col items-center justify-center overflow-hidden py-16 lg:py-24">
+<div class="layout-container flex w-full flex-col px-4 sm:px-6 lg:px-8">
+<div class="mx-auto flex w-full max-w-7xl flex-col items-center">
+<!-- Hero Content Wrapper -->
+<div class="relative w-full overflow-hidden rounded-2xl bg-slate-900 text-center shadow-xl">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0" data-alt="Abstract blue digital cloud network visualization" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgof8TGt21GoqgMQM84jRCAHTStsMDu0OZgjWaLyDiO6-rniB7KoyWQ9rMbb0AnIxfFbSNP11l7FJ6fseJ0O9u7Io1Iv8nNAdlIDXEAzGQIvkb2e_k-cSV3OEVvSABntCfhsn43QIQuatuvYWMj5DwOdWgq2HVc82YrJ0WY-qKqv66zYZCnlElwyqW0BAzUTS8xeVNSpfqXnil7ak4NZBNWNSZLRwm0AueeUky5m1RRO6gDPmO7rBRmqFC3wVMpyM6ED0pHrDd'); background-size: cover; background-position: center;">
+</div>
+<!-- Hero Text Content -->
+<div class="relative z-10 flex flex-col items-center justify-center gap-6 px-6 py-20 sm:px-12 md:py-32">
+<div class="flex flex-col gap-3 max-w-3xl">
+<h1 class="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+                                        당신의 아이디어를 클라우드에
+                                    </h1>
+<h2 class="text-lg font-medium leading-relaxed text-slate-200 sm:text-xl">
+                                        어디서든 메모하고, AI가 정리해드립니다
+                                    </h2>
+</div>
+<button class="mt-4 flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white transition-transform hover:scale-105 hover:bg-primary-dark">
+                                    무료로 시작하기
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section Header -->
+<section class="py-10">
+<div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900">요금제</h2>
+<p class="mt-4 text-lg text-slate-600">당신에게 가장 적합한 플랜을 선택하세요</p>
+</div>
+</section>
+<!-- Pricing Cards -->
+<section class="pb-20">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<!-- Free Card -->
+<div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-slate-900">Free</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-black tracking-tight text-slate-900">₩0</span>
+<span class="text-base font-bold text-slate-500">/ 월</span>
+</div>
+</div>
+<button class="mb-8 w-full rounded-lg bg-slate-100 py-2.5 text-sm font-bold text-slate-700 hover:bg-slate-200 transition-colors">
+                                현재 플랜
+                            </button>
+<ul class="flex flex-col gap-4 text-sm text-slate-700">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>메모 100개</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>기본 AI 요약</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>1GB 저장공간</span>
+</li>
+</ul>
+</div>
+<!-- Pro Card (Popular) -->
+<div class="relative flex flex-col rounded-2xl border-2 border-primary bg-white p-8 shadow-lg scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white shadow-sm">
+                                인기
+                            </div>
+<div class="mb-4">
+<h3 class="text-lg font-bold text-primary">Pro</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-black tracking-tight text-slate-900">₩9,900</span>
+<span class="text-base font-bold text-slate-500">/ 월</span>
+</div>
+</div>
+<button class="mb-8 w-full rounded-lg bg-primary py-2.5 text-sm font-bold text-white hover:bg-primary-dark transition-colors shadow-md shadow-primary/20">
+                                Pro 시작하기
+                            </button>
+<ul class="flex flex-col gap-4 text-sm text-slate-700">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>메모 무제한</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>고급 AI 요약 및 검색</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>10GB 저장공간</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>팀 공유 기능</span>
+</li>
+</ul>
+</div>
+<!-- Enterprise Card -->
+<div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-slate-900">Enterprise</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-4xl font-black tracking-tight text-slate-900">₩29,900</span>
+<span class="text-base font-bold text-slate-500">/ 월</span>
+</div>
+</div>
+<button class="mb-8 w-full rounded-lg bg-slate-100 py-2.5 text-sm font-bold text-slate-700 hover:bg-slate-200 transition-colors">
+                                문의하기
+                            </button>
+<ul class="flex flex-col gap-4 text-sm text-slate-700">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>Pro의 모든 기능</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>무제한 저장공간</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>전용 고객 지원</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check</span>
+<span>SSO 로그인</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-100 bg-white py-12">
+<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 lg:flex-row lg:px-8 lg:text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400" style="font-size: 24px;">cloud</span>
+<span class="text-sm text-slate-500">© CloudNote</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">이용약관</a>
+<a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">개인정보처리방침</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote 결제 완료 확인</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1a2632",
+              "text-main": "#111418",
+              "text-secondary": "#617589",
+            },
+            fontFamily: {
+              "display": ["Inter", "Noto Sans KR", "sans-serif"],
+              "body": ["Inter", "Noto Sans KR", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-body min-h-screen flex flex-col">
+<!-- Top Navbar -->
+<header class="w-full bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[20px]">cloud</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-text-main dark:text-white">CloudNote</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex text-sm font-medium text-text-secondary dark:text-gray-400">
+                        help@cloudnote.com
+                    </div>
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 bg-center bg-cover" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBD8xUD7pdU8OY8-iI5380lYYsWxrjdVAYA6veXgGVzdG3F8ARsGFobZWqknARnTQFbJOjhSfV2xJybqQHZER8Jz-2a1etLUv3WcMhjFbI3eeNnqfdGQZt0_us6nH9bOdqNE1Kaf2t-dDGyMaIfq7v-exfLHlHgjZLTat0bG-_Ysi4HlM9zMVr5fNZhdWyoBbYtlp5EIbhmyHSCJVbY13Yb40JB6be3K91B1_VJGcYbbHuJ7npZkF9E1BcKCIj5y_kBY0e6jJIH');"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center p-4 sm:p-6">
+<!-- Central Card -->
+<div class="w-full max-w-[480px] bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl dark:shadow-black/40 overflow-hidden border border-gray-100 dark:border-gray-800">
+<!-- Success Header Section -->
+<div class="flex flex-col items-center pt-10 pb-6 px-8 text-center">
+<div class="size-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-[48px]">check</span>
+</div>
+<h1 class="text-2xl sm:text-3xl font-bold text-text-main dark:text-white mb-2">
+                    결제가 완료되었습니다!
+                </h1>
+<p class="text-text-secondary dark:text-gray-400 text-base sm:text-lg">
+                    Pro 플랜이 활성화되었습니다
+                </p>
+</div>
+<!-- Divider -->
+<div class="px-8">
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+</div>
+<!-- Payment Details List -->
+<div class="px-8 py-6 space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">주문번호</span>
+<span class="font-medium text-text-main dark:text-gray-200">ORD-2025011234</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">결제 금액</span>
+<span class="font-bold text-lg text-primary">₩9,900</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">결제 수단</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-secondary dark:text-gray-500">credit_card</span>
+<span class="font-medium text-text-main dark:text-gray-200">신용카드 (****1234)</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">결제 일시</span>
+<span class="font-medium text-text-main dark:text-gray-200">2025년 1월 15일 14:30</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">다음 결제일</span>
+<span class="font-medium text-text-main dark:text-gray-200">2025년 2월 15일</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="px-8">
+<div class="h-px w-full bg-gray-100 dark:bg-gray-800"></div>
+</div>
+<!-- Action Buttons -->
+<div class="p-8 flex flex-col gap-4">
+<button class="w-full h-12 bg-primary hover:bg-blue-600 text-white font-semibold rounded-xl transition-colors duration-200 flex items-center justify-center gap-2 group">
+<span>대시보드로 이동</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<a class="flex items-center justify-center gap-2 text-primary hover:text-blue-700 text-sm font-medium transition-colors py-2" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    영수증 다운로드
+                </a>
+</div>
+<!-- Footer Note -->
+<div class="bg-gray-50 dark:bg-gray-800/50 px-8 py-4 text-center border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-text-secondary dark:text-gray-500 leading-relaxed">
+                    결제 확인 이메일을 발송했습니다.<br/>
+                    문의사항이 있으시면 <a class="underline hover:text-text-main dark:hover:text-gray-300" href="#">고객센터</a>로 연락해주세요.
+                </p>
+</div>
+</div>
+</main>
+</body></html>
